@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BiLogOut } from "react-icons/bi";
 import { FaBars } from "react-icons/fa";
 import { IoClose, IoHomeOutline } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import { AuthContext } from "../../Providers/AuthProvider";
 const Navbar = () => {
+  // const {name} = useContext(AuthContext);
+  // console.log(name)
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <div>
@@ -119,7 +121,6 @@ const Navbar = () => {
             <ul className="menu menu-horizontal space-x-10 text-lg  flex items-center animate__animated animate__bounceInDown">
               <NavLink
                 to={"/"}
-                key="home"
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
@@ -132,7 +133,6 @@ const Navbar = () => {
 
               <NavLink
                 to={"/reviews"}
-                key="reviews"
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
@@ -141,16 +141,38 @@ const Navbar = () => {
               >
                 Reviews
               </NavLink>
-
-              <a
+              <NavLink
+                to={"/add-reviews"}
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
                     : "flex gap-1 items-center"
                 }
               >
-                About Us
-              </a>
+                Add Review
+              </NavLink>
+
+              <NavLink
+                to={"/my-reviews"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                    : "flex gap-1 items-center"
+                }
+              >
+                My Reviews
+              </NavLink>
+
+              <NavLink
+                to={"/game-watchList"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                    : "flex gap-1 items-center"
+                }
+              >
+                Game WatchList
+              </NavLink>
 
               {/* {user && user.email && (
                 <NavLink
