@@ -3,6 +3,11 @@ import MainLayout from "../Layout/MainLayout";
 import HomeLayout from "../Layout/HomeLayout";
 import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
+import Reviews from "../Pages/Reviews";
+import AddReviews from "../Pages/AddReviews";
+import MyReviews from "../Pages/MyReviews";
+import GameWatchList from "../Pages/GameWatchList";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -12,12 +17,40 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomeLayout></HomeLayout>,
+        loader: () => fetch("http://localhost:5000/reviews"),
       },
 
       // reviews sections all routes
-      // {
-      //   path:"/reviews"
-      // }
+      {
+        path: "/reviews",
+        element: <Reviews></Reviews>,
+        loader: () => fetch("http://localhost:5000/reviews"),
+      },
+      {
+        path: "/add-review",
+        element: (
+          <PrivateRoute>
+            <AddReviews></AddReviews>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-reviews",
+        element: (
+          <PrivateRoute>
+            <MyReviews></MyReviews>
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/reviews"),
+      },
+      {
+        path: "/game-watchList",
+        element: (
+          <PrivateRoute>
+            <GameWatchList></GameWatchList>
+          </PrivateRoute>
+        ),
+      },
       // reviews sections all routes
 
       //   authentication
