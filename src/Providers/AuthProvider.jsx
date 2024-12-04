@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/firebase.init";
 export const AuthContext = createContext();
@@ -44,10 +45,10 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, provider);
   };
 
-  //   // for update profile
-  //   const updateUserProfile = (updatedData) => {
-  //     return updateProfile(auth.currentUser, updatedData);
-  //   };
+  // for update profile
+  const updateUserProfile = (updatedData) => {
+    return updateProfile(auth.currentUser, updatedData);
+  };
 
   // for save the user
   useEffect(() => {
@@ -72,6 +73,7 @@ const AuthProvider = ({ children }) => {
     userLogin,
     logOut,
     googleLogin,
+    updateUserProfile,
     loading,
     email,
     setEmail,

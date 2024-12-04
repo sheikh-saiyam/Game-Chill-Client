@@ -6,8 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { AuthContext } from "../../Providers/AuthProvider";
 const Navbar = () => {
-  // const {name} = useContext(AuthContext);
-  // console.log(name)
+  const { user, logOut, loading } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   return (
@@ -130,7 +129,6 @@ const Navbar = () => {
                 <IoHomeOutline />
                 Home
               </NavLink>
-
               <NavLink
                 to={"/reviews"}
                 className={({ isActive }) =>
@@ -141,58 +139,48 @@ const Navbar = () => {
               >
                 Reviews
               </NavLink>
-              <NavLink
-                to={"/add-reviews"}
-                className={({ isActive }) =>
-                  isActive
-                    ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                    : "flex gap-1 items-center"
-                }
-              >
-                Add Review
-              </NavLink>
-
-              <NavLink
-                to={"/my-reviews"}
-                className={({ isActive }) =>
-                  isActive
-                    ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                    : "flex gap-1 items-center"
-                }
-              >
-                My Reviews
-              </NavLink>
-
-              <NavLink
-                to={"/game-watchList"}
-                className={({ isActive }) =>
-                  isActive
-                    ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                    : "flex gap-1 items-center"
-                }
-              >
-                Game WatchList
-              </NavLink>
-
-              {/* {user && user.email && (
-                <NavLink
-                  to={"/profile"}
-                  key="profile"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 border-primary border rounded-xl"
-                      : "flex gap-1 items-center"
-                  }
-                >
-                  <CgProfile />
-                  My Profile
-                </NavLink>
-              )} */}
+              {/* private routes */}
+              {user && user.email && (
+                <>
+                  <NavLink
+                    to={"/add-reviews"}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                        : "flex gap-1 items-center"
+                    }
+                  >
+                    Add Review
+                  </NavLink>
+                  <NavLink
+                    to={"/my-reviews"}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                        : "flex gap-1 items-center"
+                    }
+                  >
+                    My Reviews
+                  </NavLink>
+                  <NavLink
+                    to={"/game-watchList"}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                        : "flex gap-1 items-center"
+                    }
+                  >
+                    Game WatchList
+                  </NavLink>
+                </>
+              )}
+              {/* private routes */}
             </ul>
           </div>
           <div className="navbar-end ">
             <div className="flex items-center gap-3">
-              {/* {user && user?.email && user?.photoURL ? (
+              {/* conditional // userPhoto and Name */}
+              {user && user?.email && user?.photoURL ? (
                 <div className="md:flex gap-2 items-center hidden lg:flex">
                   <div className="dropdown dropdown-hover dropdown-end">
                     <div tabIndex={0} role="button" className="m-1">
@@ -226,9 +214,11 @@ const Navbar = () => {
                 </div>
               ) : (
                 ""
-              )} */}
+              )}
+              {/* conditional // userPhoto and Name */}
 
-              {/* {user && user.email ? (
+              {/* conditional login/register/logout btn */}
+              {user && user.email ? (
                 <button
                   onClick={logOut}
                   className="btn bg-primary font-semibold text-lg text-white px-8
@@ -254,19 +244,8 @@ const Navbar = () => {
                     Registration
                   </Link>
                 </>
-              )} */}
-              <Link
-                to={"/login"}
-                className="btn bg-primary font-semibold text-lg text-white px-8"
-              >
-                Login
-              </Link>
-              <Link
-                to={"/register"}
-                className="btn bg-primary font-semibold text-lg text-white hidden md:flex"
-              >
-                Registration
-              </Link>
+              )}
+              {/* conditional login/register/logout btn */}
             </div>
           </div>
         </div>

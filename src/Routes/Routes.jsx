@@ -13,6 +13,13 @@ const router = createBrowserRouter([
         path: "/",
         element: <HomeLayout></HomeLayout>,
       },
+
+      // reviews sections all routes
+      // {
+      //   path:"/reviews"
+      // }
+      // reviews sections all routes
+
       //   authentication
       {
         path: "/login",
