@@ -1,7 +1,9 @@
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const AllReviewCard = ({ review }) => {
   const {
+    _id,
     title,
     gameCover,
     reviewDescription,
@@ -35,9 +37,9 @@ const AllReviewCard = ({ review }) => {
             </i>
           </div>
           <div className="text-center font-mono">
-            <button className="btn btn-sm w-1/2 text-white  font-semibold text-lg bg-accent rounded-full h-full">
+            <Link to={`/review/${_id}`} className="btn btn-sm w-1/2 text-white  font-semibold text-lg bg-accent rounded-full h-full">
               Explore More
-            </button>
+            </Link>
           </div>
         </div>
       </div>

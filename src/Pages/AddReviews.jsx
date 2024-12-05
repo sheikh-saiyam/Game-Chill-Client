@@ -43,7 +43,7 @@ const AddReviews = () => {
           text: "Review Added Successfully",
           icon: "success",
         });
-        form.reset();
+        // form.reset();
       });
   };
   return (
