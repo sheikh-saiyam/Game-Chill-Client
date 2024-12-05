@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { FaStar } from "react-icons/fa";

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyReviewsTable = ({ myReview, idx, myReviews, setMyReviews }) => {
@@ -26,7 +27,7 @@ const MyReviewsTable = ({ myReview, idx, myReviews, setMyReviews }) => {
             });
           });
         const afterDeletedReview = myReviews.filter(
-          (schedule) => id !== schedule._id
+          (review) => id !== review._id
         );
         setMyReviews(afterDeletedReview);
       }
@@ -44,9 +45,12 @@ const MyReviewsTable = ({ myReview, idx, myReviews, setMyReviews }) => {
         <td>{rating}</td>
         <td>
           <div className="flex sm:flex-row sm:flex flex-col gap-2 items-center">
-            <button className="btn btn-sm text-white font-semibold text-md bg-blue-500">
+            <Link
+              to={`/update-review/${_id}`}
+              className="btn btn-sm text-white font-semibold text-md bg-blue-500"
+            >
               Update
-            </button>
+            </Link>
             <button
               onClick={() => handleDeleteReview(_id)}
               className="btn btn-sm text-white font-semibold text-md bg-red-500 "
