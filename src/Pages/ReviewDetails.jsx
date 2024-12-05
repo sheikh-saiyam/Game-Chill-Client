@@ -27,7 +27,26 @@ const ReviewDetails = () => {
 
   const handleAddToWatchList = () => {
     if (user && user.email) {
-      Swal.fire("Added To WatchList");
+      fetch("http://localhost:5000/watchLists", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          reviewDetails,
+          email: user.email,
+          displayName: user.displayName,
+        }),
+      })
+        .then((res) => res.json())
+        .then(() => {
+          Swal.fire({
+            title: "Congratulation!",
+            text: "Review Added To WatchList Successfully",
+            icon: "success",
+          });
+          //   form.reset();
+        });
     } else {
       navigate("/login");
     }

@@ -15,13 +15,18 @@ const AllReviewCard = ({ review }) => {
   } = review;
   return (
     <div>
-      <div className="h-full">
-        <img className="w-full h-64" src={gameCover} alt="Game Cover" />
-        <div className="p-3 border-2 border-accent border-t-0">
-          <h2 className="text-3xl text-center font-serif font-semibold ">
-            {title}
-          </h2>
-          <div className="flex  justify-center font-mono items-center gap-2 my-2 text-lg">
+      <div className="h-full sm:flex item-center">
+        <div className="sm:w-1/2">
+          <img className="w-full h-[250px]" src={gameCover} alt="Game Cover" />
+        </div>
+        <div className="p-4 border-2 border-accent sm:border-l-0 sm:w-1/2 sm:grid sm:place-content-center ">
+          <div>
+            <h2 className="text-3xl font-serif font-semibold mb-2">{title}</h2>
+            <span className="text-gray-700 font-semibold text-lg">
+              Genre: {genre}
+            </span>
+          </div>
+          <div className="flex font-mono items-center gap-2 my-2 text-lg ">
             <span className="text-gray-700 font-semibold">
               Rating: {rating}
             </span>
@@ -36,10 +41,10 @@ const AllReviewCard = ({ review }) => {
               ))}
             </i>
           </div>
-          <div className="text-center font-mono">
+          <div className="font-mono mt-2">
             <Link
               to={`/review/${_id}`}
-              className="btn btn-sm w-1/2 text-white  font-semibold text-lg bg-accent rounded-full h-full"
+              className="btn w-full text-white  font-semibold text-lg bg-accent h-full"
             >
               Explore More
             </Link>

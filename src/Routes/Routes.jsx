@@ -72,6 +72,7 @@ const router = createBrowserRouter([
             <GameWatchList></GameWatchList>
           </PrivateRoute>
         ),
+        loader: () => fetch("http://localhost:5000/watchlists"),
       },
       // reviews sections all routes
 

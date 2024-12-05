@@ -3,7 +3,6 @@ import AllReviewCard from "../components/Review/AllReviewCard";
 
 const Reviews = () => {
   const allReviews = useLoaderData();
-  console.log(allReviews);
   return (
     <div className="w-11/12 mx-auto md:w-10/12 max-w-screen-2xl pt-12 pb-24">
       <div>
@@ -49,7 +48,7 @@ const Reviews = () => {
           </div>
         </div>
       </div> */}
-      <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+      <div className="grid gap-6 grid-cols-1 xl:grid-cols-2">
         {allReviews.map((review) => (
           <AllReviewCard key={review._id} review={review}></AllReviewCard>
         ))}

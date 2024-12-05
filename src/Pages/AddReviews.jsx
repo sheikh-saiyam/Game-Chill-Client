@@ -36,14 +36,13 @@ const AddReviews = () => {
       body: JSON.stringify(newReview),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         Swal.fire({
           title: "Congratulation!",
           text: "Review Added Successfully",
           icon: "success",
         });
-        // form.reset();
+        form.reset();
       });
   };
   return (
