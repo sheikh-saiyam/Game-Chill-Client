@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 
 const MyReviewsTable = ({ myReview, idx, myReviews, setMyReviews }) => {
   const { _id, title, gameCover, rating, genre } = myReview;
-
+  // delete review function
   const handleDeleteReview = (id) => {
     Swal.fire({
       title: "Are you sure?",
