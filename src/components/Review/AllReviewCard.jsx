@@ -2,22 +2,12 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const AllReviewCard = ({ review }) => {
-  const {
-    _id,
-    title,
-    gameCover,
-    reviewDescription,
-    rating,
-    publishingYear,
-    genre,
-    userEmail,
-    userName,
-  } = review;
+  const { _id, title, gameCover, rating, genre, publishingYear } = review;
   return (
     <div>
       <div className="h-full sm:flex item-center">
         <div className="sm:w-1/2">
-          <img className="w-full h-[250px]" src={gameCover} alt="Game Cover" />
+          <img className="w-full h-[300px]" src={gameCover} alt="Game Cover" />
         </div>
         <div className="p-4 border-2 border-accent sm:border-l-0 sm:w-1/2 sm:grid sm:place-content-center ">
           <div>
@@ -41,6 +31,9 @@ const AllReviewCard = ({ review }) => {
               ))}
             </i>
           </div>
+          <span className="text-gray-700 font-semibold">
+            Publishing Year: {publishingYear}
+          </span>
           <div className="font-mono mt-2">
             <Link
               to={`/review/${_id}`}

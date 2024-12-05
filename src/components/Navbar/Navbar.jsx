@@ -36,7 +36,7 @@ const Navbar = () => {
                     to={"/"}
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl border-accent border bg-bgPrimary p-2"
                         : "flex gap-1 items-center"
                     }
                   >
@@ -47,7 +47,7 @@ const Navbar = () => {
                     to={"/reviews"}
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl  border-accent border bg-bgPrimary p-2"
                         : "flex gap-1 items-center"
                     }
                   >
@@ -60,7 +60,7 @@ const Navbar = () => {
                         to={"/add-review"}
                         className={({ isActive }) =>
                           isActive
-                            ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                            ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl border-accent border bg-bgPrimary p-2"
                             : "flex gap-1 items-center"
                         }
                       >
@@ -70,7 +70,7 @@ const Navbar = () => {
                         to={"/my-reviews"}
                         className={({ isActive }) =>
                           isActive
-                            ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                            ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl border-accent border bg-bgPrimary p-2"
                             : "flex gap-1 items-center"
                         }
                       >
@@ -80,7 +80,7 @@ const Navbar = () => {
                         to={"/game-watchList"}
                         className={({ isActive }) =>
                           isActive
-                            ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                            ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl border-accent border bg-bgPrimary p-2"
                             : "flex gap-1 items-center"
                         }
                       >
@@ -89,11 +89,50 @@ const Navbar = () => {
                     </>
                   )}
                   {/* private routes */}
+
+                  {user && user?.email && user?.photoURL ? (
+                    <div className="md:flex gap-2 items-center">
+                      <div className="flex flex-col space-y-2 justify-center">
+                        <div className="m-1">
+                          <img
+                            className="w-10 h-10 rounded-full mx-auto"
+                            src={user?.photoURL}
+                            alt="user"
+                          />
+                        </div>
+                        <div>
+                          <h1 className="text-center font-semibold">
+                            {user.email}
+                          </h1>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+
+                  {user && user.email ? (
+                    <button
+                      onClick={logOut}
+                      className="btn bg-primary font-semibold text-lg text-white px-8
+                    items-center gap-2 flex"
+                    >
+                      <BiLogOut />
+                      Log Out
+                    </button>
+                  ) : (
+                    <Link
+                      to={"/register"}
+                      className="btn bg-primary font-semibold text-lg text-white"
+                    >
+                      Registration
+                    </Link>
+                  )}
                 </ul>
               )}
             </div>
             <Link>
-              <img className="w-full h-20 md:w-40 " src={logo} alt="" />
+              <img className="w-full h-20 md:w-40" src={logo} alt="" />
             </Link>
           </div>
           <div className="navbar-center hidden xl:flex">

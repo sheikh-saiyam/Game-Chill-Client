@@ -41,15 +41,12 @@ const UpdateReview = () => {
       body: JSON.stringify(updatedReview),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        // if (data.modifiedCount > 0) {
+      .then(() => {
         Swal.fire({
           title: "Congratulation!",
           text: "Review Updated Successfully",
           icon: "success",
         });
-        // }
         form.reset();
       });
   };
@@ -116,11 +113,11 @@ const UpdateReview = () => {
               <input
                 type="number"
                 name="rating"
-                placeholder="Enter a rating (1-10)"
+                placeholder="Enter a rating (1-5)"
                 defaultValue={rating}
                 required
                 min="1"
-                max="10"
+                max="5"
                 step="0.1"
                 className="mt-1 block w-full input input-bordered"
               />
@@ -134,7 +131,7 @@ const UpdateReview = () => {
               <input
                 type="number"
                 name="publishingYear"
-                placeholder="Enter publishing year (e.g., 2024)"
+                placeholder="Enter publishing year"
                 defaultValue={publishingYear}
                 required
                 min="1990"

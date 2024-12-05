@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -105,10 +104,10 @@ const AddReviews = () => {
               <input
                 type="number"
                 name="rating"
-                placeholder="Enter a rating (1-10)"
+                placeholder="Enter a rating (1-5)"
                 required
                 min="1"
-                max="10"
+                max="5"
                 step="0.1"
                 className="mt-1 block w-full input input-bordered"
               />
@@ -122,9 +121,9 @@ const AddReviews = () => {
               <input
                 type="number"
                 name="publishingYear"
-                placeholder="Enter publishing year (e.g., 2024)"
+                placeholder="Enter publishing year"
                 required
-                min="1990"
+                min="1999"
                 max="2077"
                 className="mt-1 block w-full input input-bordered"
               />
