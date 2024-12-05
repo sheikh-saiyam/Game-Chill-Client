@@ -37,7 +37,10 @@ const AllReviewCard = ({ review }) => {
             </i>
           </div>
           <div className="text-center font-mono">
-            <Link to={`/review/${_id}`} className="btn btn-sm w-1/2 text-white  font-semibold text-lg bg-accent rounded-full h-full">
+            <Link
+              to={`/review/${_id}`}
+              className="btn btn-sm w-1/2 text-white  font-semibold text-lg bg-accent rounded-full h-full"
+            >
               Explore More
             </Link>
           </div>
