@@ -57,9 +57,9 @@ const HomeLayout = () => {
       </div>
       {/* Latest Game news and update */}
       {/* top-10 new games */}
-      {/* <div className="pt-24">
+      <div className="pt-24">
         <NewGames key={sortedYear._id} newGamesData={sortedYear}></NewGames>
-      </div> */}
+      </div>
       {/* top-10 new games */}
     </div>
   );
