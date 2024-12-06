@@ -52,9 +52,9 @@ const HomeLayout = () => {
       {/* Highest Rated Game Section */}
 
       {/* Latest Game news and update */}
-      {/* <div className="pt-24">
+      <div className="pt-24">
         <GameNews></GameNews>
-      </div> */}
+      </div>
       {/* Latest Game news and update */}
       {/* top-10 new games */}
       {/* <div className="pt-24">
