@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HighestRatedCard = ({ gameReview }) => {
   const { _id, title, gameCover, rating } = gameReview;
   return (
-    <div>
+    <div className="grid place-content-stretch">
       <img className="w-full h-64" src={gameCover} alt="Game Cover" />
       <div className="p-3 border-2 border-accent border-t-0">
         <h2 className="text-3xl text-center font-serif font-semibold ">

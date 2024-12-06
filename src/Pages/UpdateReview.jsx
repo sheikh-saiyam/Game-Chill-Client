@@ -47,7 +47,6 @@ const UpdateReview = () => {
           text: "Review Updated Successfully",
           icon: "success",
         });
-        form.reset();
       });
   };
   return (
@@ -155,24 +154,12 @@ const UpdateReview = () => {
                 <option value="Action">Action</option>
                 <option value="RPG">RPG</option>
                 <option value="Adventure">Adventure</option>
-                <option value="Strategy">Strategy</option>
                 <option value="Shooter">Shooter</option>
                 <option value="Sports">Sports</option>
-                <option value="Simulation">Simulation</option>
-                <option value="Puzzle">Puzzle</option>
-                <option value="Platformer">Platformer</option>
-                <option value="Fighting">Fighting</option>
                 <option value="Horror">Horror</option>
                 <option value="Racing">Racing</option>
-                <option value="Music">Music</option>
                 <option value="Sandbox">Sandbox</option>
-                <option value="Survival">Survival</option>
                 <option value="MMO">MMO</option>
-                <option value="Indie">Indie</option>
-                <option value="Open World">Open World</option>
-                <option value="Stealth">Stealth</option>
-                <option value="Tactical">Tactical</option>
-                <option value="Visual Novel">Visual Novel</option>
               </select>
             </div>
           </div>
