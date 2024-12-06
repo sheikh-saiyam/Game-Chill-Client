@@ -70,7 +70,7 @@ const GameNews = () => {
   return (
     <section>
       <h2 className="mb-8 font-bold text-2xl md:text-3xl lg:text-4xl text-center font-serif">
-        Latest Game {" "}
+        Latest Game{" "}
         <Typewriter
           words={["News and Updates"]}
           loop={false}

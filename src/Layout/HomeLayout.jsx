@@ -5,6 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 import NewGames from "../components/ExtraSections/NewGames";
 import { useEffect, useState } from "react";
 import GameNews from "../components/ExtraSections/GameNews";
+import UpcomingGames from "../components/ExtraSections/UpcomingGames";
 
 const HomeLayout = () => {
   const highestRatedGame = useLoaderData();
@@ -61,6 +62,9 @@ const HomeLayout = () => {
         <NewGames key={sortedYear._id} newGamesData={sortedYear}></NewGames>
       </div>
       {/* top-10 new games */}
+      {/* upcoming games */}
+      <UpcomingGames></UpcomingGames>
+      {/* upcoming games */}
     </div>
   );
 };
