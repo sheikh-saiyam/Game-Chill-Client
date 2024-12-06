@@ -69,7 +69,7 @@ const GameNews = () => {
 
   return (
     <section>
-      <h2 className="mb-8 font-bold text-2xl md:text-3xl lg:text-4xl text-center font-serif">
+      <h2 className="dark:text-white mb-8 font-bold text-2xl md:text-3xl lg:text-4xl text-center font-serif">
         Latest Game{" "}
         <Typewriter
           words={["News and Updates"]}
@@ -104,7 +104,7 @@ const GameNews = () => {
                 {article.description}
               </p>
               <div className="flex justify-between items-center gap-1">
-                <button className="btn bg-accent w-6/12 text-white rounded-lg">
+                <button className="btn dark:bg-darkAccent bg-accent w-6/12 text-white rounded-lg">
                   Read More
                 </button>
                 <p className="text-sm text-gray-600">Date: {article.date}</p>

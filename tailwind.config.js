@@ -9,6 +9,11 @@ export default {
         bgPrimary: "#fdf9fb",
         secondary: "#e597b3",
         accent: "#df5485",
+        // for dark
+        darkPrimary: "#bd2e62",
+        darkBgPrimary: "#2a2a2b",
+        darkSecondary: "#6f1636",
+        darkAccent: "#af184f",
       },
     },
   },

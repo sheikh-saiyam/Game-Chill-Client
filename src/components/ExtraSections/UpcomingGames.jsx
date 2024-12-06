@@ -35,7 +35,7 @@ const UpcomingGames = () => {
     <div className="mt-24">
       <section>
         <div className="mx-auto px-6">
-          <h2 className="mb-8 font-bold text-2xl md:text-3xl lg:text-4xl text-center font-serif">
+          <h2 className="dark:text-white mb-8 font-bold text-2xl md:text-3xl lg:text-4xl text-center font-serif">
             Upcoming{" "}
             <Typewriter
               words={["Games"]}
