@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import WatchListTable from "../components/Review/WatchListTable";
@@ -10,6 +10,7 @@ const GameWatchList = () => {
   const filteredWatchListData = watchListData.filter(
     (watchList) => watchList.email === user.email
   );
+  const [myWatchList, setMyWatchList] = useState(filteredWatchListData)
   return (
     <div className="w-11/12 mx-auto md:w-10/12 max-w-screen-2xl py-14">
       {filteredWatchListData.length === 0 ? (
@@ -32,7 +33,7 @@ const GameWatchList = () => {
               Your All{" "}
               <Typewriter
                 words={["WatchLists"]}
-                loop={5}
+                loop={false}
                 cursor
                 cursorStyle="_"
                 typeSpeed={70}
@@ -57,11 +58,13 @@ const GameWatchList = () => {
                 </tr>
               </thead>
               <tbody>
-                {filteredWatchListData.map((watchList, index) => (
+                {myWatchList.map((watchList, index) => (
                   <WatchListTable
                     key={watchList._id}
                     watchList={watchList}
                     idx={index}
+                    myWatchList={myWatchList}
+                    setMyWatchList={setMyWatchList}
                   ></WatchListTable>
                 ))}
               </tbody>

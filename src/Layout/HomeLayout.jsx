@@ -17,10 +17,9 @@ const HomeLayout = () => {
       (a, b) => b.publishingYear - a.publishingYear
     );
     setSortedYear(sort);
-  }, [highestRatedGame]);
-
+  }, [highestRatedGame]);  
   return (
-    <div className="w-11/12 mx-auto md:w-10/12 max-w-screen-2xl pt-12 pb-24">
+    <div className="bg-white dark:bg-black w-11/12 mx-auto md:w-10/12 max-w-screen-2xl pt-12 pb-24">
       <Banner></Banner>
       {/* Highest Rated Game Section */}
       <div>

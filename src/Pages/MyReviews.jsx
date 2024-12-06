@@ -33,7 +33,7 @@ const MyReviews = () => {
               Your All{" "}
               <Typewriter
                 words={["Reviews"]}
-                loop={5}
+                loop={false}
                 cursor
                 cursorStyle="_"
                 typeSpeed={70}

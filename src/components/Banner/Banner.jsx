@@ -46,7 +46,7 @@ const Banner = () => {
 
   // Auto slide every 3 seconds
   useEffect(() => {
-    const interval = setInterval(nextSlide, 4000);
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -61,7 +61,7 @@ const Banner = () => {
           <div key={index} className="w-full flex-shrink-0">
             <img
               src={image.src}
-              className="w-full h-[350px] md:h-[500px] lg:h-[550px] rounded-2xl border-2 border-[#cccccc]"
+              className="w-full h-[350px] md:h-[500px] lg:h-[550px] rounded-2xl border-2 border-transparent"
               alt={image.alt}
             />
           </div>

@@ -99,9 +99,10 @@ const Reviews = () => {
           <div
             tabIndex={0}
             role="button"
-            className="btn bg-accent text-white m-2 flex items-center"
+            className="btn h-full bg-accent text-white m-2 flex items-center"
           >
-            Sort By Rating Or Year <IoIosArrowDropdown className="text-lg" />
+            Sort By <span className="hidden sm:block">Rating Or Year</span>{" "}
+            <IoIosArrowDropdown className="text-lg" />
           </div>
           <ul
             tabIndex={0}
