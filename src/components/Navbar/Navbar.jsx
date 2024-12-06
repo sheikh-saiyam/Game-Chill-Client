@@ -142,7 +142,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                    : "flex gap-1 items-center"
+                    : "flex gap-1 items-center hover:text-primary"
                 }
               >
                 <IoHomeOutline />
@@ -153,7 +153,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                    : "flex gap-1 items-center"
+                    : "flex gap-1 items-center hover:text-primary"
                 }
               >
                 All Reviews
@@ -166,7 +166,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                        : "flex gap-1 items-center"
+                        : "flex gap-1 items-center hover:text-primary"
                     }
                   >
                     Add Review
@@ -176,7 +176,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                        : "flex gap-1 items-center"
+                        : "flex gap-1 items-center hover:text-primary"
                     }
                   >
                     My Reviews
@@ -186,7 +186,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                        : "flex gap-1 items-center"
+                        : "flex gap-1 items-center hover:text-primary"
                     }
                   >
                     Game WatchList

@@ -1,9 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import AllReviewCard from "../components/Review/AllReviewCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
 
 const Reviews = () => {
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
   const allReviews = useLoaderData();
   const [sortedReviews, setSortedReviews] = useState(allReviews);
   const [filteredReview, setFilteredReview] = useState(allReviews);

@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import WatchListTable from "../components/Review/WatchListTable";
 import logo from "../assets/logo.png";
+import { Typewriter } from "react-simple-typewriter";
 const GameWatchList = () => {
   const watchListData = useLoaderData();
   const { user } = useContext(AuthContext);
@@ -28,7 +29,16 @@ const GameWatchList = () => {
         <>
           <div>
             <h1 className="mb-6 font-bold text-2xl md:text-3xl lg:text-4xl text-center font-serif">
-              Your All WatchLists
+              Your All{" "}
+              <Typewriter
+                words={["WatchLists"]}
+                loop={5}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
             </h1>
           </div>
           <div className="overflow-x-auto border-2">

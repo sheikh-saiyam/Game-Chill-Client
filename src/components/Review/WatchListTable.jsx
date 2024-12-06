@@ -15,10 +15,7 @@ const WatchListTable = ({ watchList, idx }) => {
         <td>{userName}</td>
         <td>
           <div className="flex sm:flex-row sm:flex flex-col gap-2 items-center">
-            <button
-              //   onClick={() => handleDeleteReview(_id)}
-              className="btn btn-sm text-white font-semibold text-md bg-red-500 "
-            >
+            <button className="btn btn-sm text-white font-semibold text-md bg-red-500 ">
               Remove
             </button>
           </div>

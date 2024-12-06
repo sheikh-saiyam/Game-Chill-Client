@@ -10,11 +10,13 @@ import GameWatchList from "../Pages/GameWatchList";
 import PrivateRoute from "./PrivateRoute";
 import ReviewDetails from "../Pages/ReviewDetails";
 import UpdateReview from "../Pages/UpdateReview";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -87,6 +89,10 @@ const router = createBrowserRouter([
       },
       //   authentication
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>,
   },
 ]);
 

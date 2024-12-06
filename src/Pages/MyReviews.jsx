@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import MyReviewsTable from "./MyReviewsTable";
 import logo from "../assets/logo.png";
+import { Typewriter } from "react-simple-typewriter";
 const MyReviews = () => {
   const myReviewsData = useLoaderData();
   const { user } = useContext(AuthContext);
@@ -29,7 +30,16 @@ const MyReviews = () => {
         <>
           <div>
             <h1 className="mb-6 font-bold text-2xl md:text-3xl lg:text-4xl text-center font-serif">
-              Your All Reviews
+              Your All{" "}
+              <Typewriter
+                words={["Reviews"]}
+                loop={5}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
             </h1>
           </div>
           <div className="overflow-x-auto border-2">
