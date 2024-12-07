@@ -10,35 +10,32 @@ const Reviews = () => {
       behavior: "smooth",
     });
   });
-  const allReviews = useLoaderData();
+  const { allReviews, sortedRatingReviews, sortedYearReviews } =
+    useLoaderData();
   const [sortedReviews, setSortedReviews] = useState(allReviews);
   const [filteredReview, setFilteredReview] = useState(allReviews);
-  const [selectedGenre, setSelectedGenre] = useState("All");
-  // Filter reviews by genre
+  const [selectedGenre, setSelectedGenre] = useState("");
+  useEffect(() => {
+    fetch(`http://localhost:5000/filtered-genres?genre=${selectedGenre}`)
+      .then((res) => res.json())
+      .then((data) => setFilteredReview(data));
+  }, [selectedGenre]);
+
+  
   const handleFilteredReview = (genre) => {
     setSelectedGenre(genre);
-    if (genre === "All") {
-      setFilteredReview(allReviews);
-    } else {
-      const filtered = sortedReviews.filter((p) => p.genre === genre);
-      setFilteredReview(filtered);
-    }
   };
 
-  // Sort reviews by rating
+
   const handleSortByRating = () => {
-    const sort = [...sortedReviews].sort((a, b) => b.rating - a.rating);
-    setSortedReviews(sort);
-    setFilteredReview(sort);
+    setSortedReviews(sortedRatingReviews);
+    setFilteredReview(sortedRatingReviews);
   };
 
-  // Sort reviews by year
+
   const handleSortByYear = () => {
-    const sort = [...sortedReviews].sort(
-      (a, b) => b.publishingYear - a.publishingYear
-    );
-    setSortedReviews(sort);
-    setFilteredReview(sort);
+    setSortedReviews(sortedYearReviews);
+    setFilteredReview(sortedYearReviews);
   };
   return (
     <div className="w-11/12 mx-auto md:w-10/12 max-w-screen-2xl pt-12 pb-24">
@@ -62,9 +59,11 @@ const Reviews = () => {
               >
                 <button
                   className={`btn ${
-                    selectedGenre === "All" ? "bg-accent text-white" : ""
+                    selectedGenre === "" ? "bg-accent text-white" : ""
                   }`}
-                  onClick={() => handleFilteredReview("All")}
+                  onClick={() => {
+                    handleFilteredReview("");
+                  }}
                 >
                   All
                 </button>
@@ -92,7 +91,6 @@ const Reviews = () => {
               </ul>
             </div>
           </div>
-          <div></div>
         </div>
 
         <div className="dropdown dropdown-end">
@@ -133,7 +131,7 @@ const Reviews = () => {
         </div>
       </div>
       <div className="grid gap-6 grid-cols-1 xl:grid-cols-2">
-        {filteredReview.map((review) => (
+        {(allReviews, sortedReviews, filteredReview).map((review) => (
           <AllReviewCard key={review._id} review={review}></AllReviewCard>
         ))}
       </div>

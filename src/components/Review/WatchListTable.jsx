@@ -22,7 +22,7 @@ const WatchListTable = ({ watchList, idx, myWatchList, setMyWatchList }) => {
           .then((res) => res.json())
           .then(() => {
             Swal.fire({
-              title: "Deleted!",
+              title: "Removed!",
               text: "Your WatchList has been Removed.",
               icon: "success",
             });

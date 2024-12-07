@@ -21,14 +21,29 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomeLayout></HomeLayout>,
-        loader: () => fetch("http://localhost:5000/reviews"),
+        loader: () => fetch("http://localhost:5000/highest-rated-games"),
       },
 
       // reviews sections all routes
       {
         path: "/reviews",
         element: <Reviews></Reviews>,
-        loader: () => fetch("http://localhost:5000/reviews"),
+        loader: async () => {
+          const allReviewsRes = await fetch("http://localhost:5000/reviews");
+          const allReviews = await allReviewsRes.json();
+
+          const sortedRatingReviewsRes = await fetch(
+            "http://localhost:5000/sorted-rating-reviews"
+          );
+          const sortedRatingReviews = await sortedRatingReviewsRes.json();
+
+          const sortedYearReviewsRes = await fetch(
+            "http://localhost:5000/sorted-year-reviews"
+          );
+          const sortedYearReviews = await sortedYearReviewsRes.json();
+          
+          return { allReviews, sortedRatingReviews, sortedYearReviews };
+        },
       },
       // review details route
       {

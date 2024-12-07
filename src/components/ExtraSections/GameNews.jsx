@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Fade } from "react-awesome-reveal";
 import { Typewriter } from "react-simple-typewriter";
 
 const GameNews = () => {
@@ -83,34 +84,35 @@ const GameNews = () => {
       </h2>
       <div className="space-y-8">
         {newsArticles.map((article, index) => (
-          <div
-            key={article.id}
-            className={`bg-white rounded-lg space-y-4 md:space-y-0 md:flex items-center gap-4 border-2 p-4 ${
-              index % 2 !== 0 ? "flex-row-reverse" : ""
-            }`}
-          >
-            <div className="md:w-3/6">
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-56 rounded-md"
-              />
-            </div>
-            <div className="md:w-3/6">
-              <h3 className="text-2xl font-semibold text-gray-800">
-                {article.title}
-              </h3>
-              <p className="text-base text-gray-800 my-3">
-                {article.description}
-              </p>
-              <div className="flex justify-between items-center gap-1">
-                <button className="btn dark:bg-darkAccent bg-accent w-6/12 text-white rounded-lg">
-                  Read More
-                </button>
-                <p className="text-sm text-gray-600">Date: {article.date}</p>
+          <Fade key={article.id}>
+            <div
+              className={`bg-white rounded-lg space-y-4 md:space-y-0 md:flex items-center gap-4 border-2 p-4 ${
+                index % 2 !== 0 ? "flex-row-reverse" : ""
+              }`}
+            >
+              <div className="md:w-3/6">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="w-full h-56 rounded-md"
+                />
+              </div>
+              <div className="md:w-3/6">
+                <h3 className="text-2xl font-semibold text-gray-800">
+                  {article.title}
+                </h3>
+                <p className="text-base text-gray-800 my-3">
+                  {article.description}
+                </p>
+                <div className="flex justify-between items-center gap-1">
+                  <button className="btn dark:bg-darkAccent bg-accent w-6/12 text-white rounded-lg">
+                    Read More
+                  </button>
+                  <p className="text-sm text-gray-600">Date: {article.date}</p>
+                </div>
               </div>
             </div>
-          </div>
+          </Fade>
         ))}
       </div>
     </section>

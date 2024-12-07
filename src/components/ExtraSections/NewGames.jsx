@@ -1,8 +1,15 @@
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 
-const NewGames = ({ newGamesData }) => {
+const NewGames = () => {
+  const [newGamesData, setNewGamesData] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/sorted-year-reviews")
+      .then((res) => res.json())
+      .then((data) => setNewGamesData(data));
+  }, []);
   return (
     <div>
       <h1 className="dark:text-white mb-8 font-bold text-2xl md:text-3xl lg:text-4xl text-center font-serif">

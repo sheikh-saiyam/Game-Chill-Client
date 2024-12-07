@@ -3,21 +3,11 @@ import Banner from "../components/Banner/Banner";
 import HighestRatedCard from "../components/Review/HighestRatedCard";
 import { Typewriter } from "react-simple-typewriter";
 import NewGames from "../components/ExtraSections/NewGames";
-import { useEffect, useState } from "react";
 import GameNews from "../components/ExtraSections/GameNews";
 import UpcomingGames from "../components/ExtraSections/UpcomingGames";
 
 const HomeLayout = () => {
   const highestRatedGame = useLoaderData();
-
-  const [sortedYear, setSortedYear] = useState(highestRatedGame);
-  useEffect(() => {
-    // Automatically sort the games when the component mounts
-    const sort = [...highestRatedGame].sort(
-      (a, b) => b.publishingYear - a.publishingYear
-    );
-    setSortedYear(sort);
-  }, [highestRatedGame]);
   return (
     <div className="bg-white dark:bg-darkBgPrimary">
       <div className="w-11/12 mx-auto md:w-10/12 max-w-screen-2xl pt-12 pb-24">
@@ -39,15 +29,12 @@ const HomeLayout = () => {
             </h1>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
-            {highestRatedGame
-              .sort((a, b) => b.rating - a.rating)
-              .slice(0, 6)
-              .map((gameReview) => (
-                <HighestRatedCard
-                  key={gameReview._id}
-                  gameReview={gameReview}
-                ></HighestRatedCard>
-              ))}
+            {highestRatedGame.map((gameReview) => (
+              <HighestRatedCard
+                key={gameReview._id}
+                gameReview={gameReview}
+              ></HighestRatedCard>
+            ))}
           </div>
         </div>
         {/* Highest Rated Game Section */}
@@ -59,7 +46,7 @@ const HomeLayout = () => {
         {/* Latest Game news and update */}
         {/* top-10 new games */}
         <div className="pt-24">
-          <NewGames key={sortedYear._id} newGamesData={sortedYear}></NewGames>
+          <NewGames></NewGames>
         </div>
         {/* top-10 new games */}
         {/* upcoming games */}
