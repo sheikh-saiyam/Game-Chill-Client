@@ -21,18 +21,18 @@ const Reviews = () => {
       .then((data) => setFilteredReview(data));
   }, [selectedGenre]);
 
-  
+  // Filter reviews by genre
   const handleFilteredReview = (genre) => {
     setSelectedGenre(genre);
   };
 
-
+  // Sort reviews by rating
   const handleSortByRating = () => {
     setSortedReviews(sortedRatingReviews);
     setFilteredReview(sortedRatingReviews);
   };
 
-
+  // Sort reviews by year
   const handleSortByYear = () => {
     setSortedReviews(sortedYearReviews);
     setFilteredReview(sortedYearReviews);
