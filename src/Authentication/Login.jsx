@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -7,6 +7,13 @@ import { FaGoogle } from "react-icons/fa";
 import { IoEyeOffSharp, IoEyeSharp } from "react-icons/io5";
 import logo from "../assets/logo.png";
 const Login = () => {
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
   const navigate = useNavigate();
   const location = useLocation();
   const navigatePath = location.state?.pathname || "/";

@@ -28,7 +28,7 @@ const Navbar = () => {
       <div
         className={
           location.pathname === "/"
-            ? "dark:bg-[#535354] py-4 bg-bgPrimary"
+            ? "dark:bg-[#646464] py-4 bg-bgPrimary"
             : "bg-bgPrimary py-4"
         }
       >

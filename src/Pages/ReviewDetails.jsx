@@ -48,7 +48,21 @@ const ReviewDetails = () => {
           //   form.reset();
         });
     } else {
-      navigate("/login");
+      // navigate("/login");
+      Swal.fire({
+        title: "Login Required",
+        text: "You need to login to add reviews to the WatchList.",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Login",
+        cancelButtonText: "OK",
+        reverseButtons: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Navigate to the login page
+          navigate("/login");
+        }
+      });
     }
   };
   return (
