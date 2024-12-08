@@ -13,16 +13,15 @@ const MyReviews = () => {
   );
   const [myReviews, setMyReviews] = useState(filteredMyReviewsData);
 
-  // for showing loader 0.5s
+  // for showing loader 0.3s
   const [showLoader, setShowLoader] = useState(true);
   useEffect(() => {
-    // Simulate a 2-second loading delay
     const timer = setTimeout(() => {
       setShowLoader(false);
-    }, 500);
+    }, 300);
     return () => clearTimeout(timer);
   }, []);
-  // for showing loader 0.5s
+  // for showing loader 0.3s
   return (
     <div className="w-11/12 mx-auto md:w-10/12 max-w-screen-2xl py-14">
       {filteredMyReviewsData.length === 0 ? (

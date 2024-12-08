@@ -5,16 +5,15 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import Loader from "../components/Loader/Loader";
 
 const Reviews = () => {
-  // for showing loader 0.5s
+  // for showing loader 0.3s
   const [showLoader, setShowLoader] = useState(true);
   useEffect(() => {
-    // Simulate a 2-second loading delay
     const timer = setTimeout(() => {
       setShowLoader(false);
-    }, 500);
+    }, 300);
     return () => clearTimeout(timer);
   }, []);
-  // for showing loader 0.5s
+  // for showing loader 0.3s
 
   useEffect(() => {
     window.scroll({
@@ -22,7 +21,7 @@ const Reviews = () => {
       behavior: "smooth",
     });
   });
-  
+
   const { allReviews, sortedRatingReviews, sortedYearReviews } =
     useLoaderData();
   const [sortedReviews, setSortedReviews] = useState(allReviews);

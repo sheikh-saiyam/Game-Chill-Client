@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             "http://localhost:5000/sorted-year-reviews"
           );
           const sortedYearReviews = await sortedYearReviewsRes.json();
-          
+
           return { allReviews, sortedRatingReviews, sortedYearReviews };
         },
       },
