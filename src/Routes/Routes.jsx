@@ -21,7 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomeLayout></HomeLayout>,
-        loader: () => fetch("http://localhost:5000/highest-rated-games"),
+        loader: () =>
+          fetch(
+            "https://saiyam-assignment10-server.vercel.app/highest-rated-games"
+          ),
       },
 
       // reviews sections all routes
@@ -29,16 +32,18 @@ const router = createBrowserRouter([
         path: "/reviews",
         element: <Reviews></Reviews>,
         loader: async () => {
-          const allReviewsRes = await fetch("http://localhost:5000/reviews");
+          const allReviewsRes = await fetch(
+            "https://saiyam-assignment10-server.vercel.app/reviews"
+          );
           const allReviews = await allReviewsRes.json();
 
           const sortedRatingReviewsRes = await fetch(
-            "http://localhost:5000/sorted-rating-reviews"
+            "https://saiyam-assignment10-server.vercel.app/sorted-rating-reviews"
           );
           const sortedRatingReviews = await sortedRatingReviewsRes.json();
 
           const sortedYearReviewsRes = await fetch(
-            "http://localhost:5000/sorted-year-reviews"
+            "https://saiyam-assignment10-server.vercel.app/sorted-year-reviews"
           );
           const sortedYearReviews = await sortedYearReviewsRes.json();
 
@@ -50,7 +55,9 @@ const router = createBrowserRouter([
         path: "/review/:id",
         element: <ReviewDetails></ReviewDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(
+            `https://saiyam-assignment10-server.vercel.app/reviews/${params.id}`
+          ),
       },
       // review details route
       {
@@ -70,7 +77,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(
+            `https://saiyam-assignment10-server.vercel.app/reviews/${params.id}`
+          ),
       },
       // update review route
       {
@@ -80,7 +89,8 @@ const router = createBrowserRouter([
             <MyReviews></MyReviews>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/reviews"),
+        loader: () =>
+          fetch("https://saiyam-assignment10-server.vercel.app/reviews"),
       },
       {
         path: "/game-watchList",
@@ -89,7 +99,8 @@ const router = createBrowserRouter([
             <GameWatchList></GameWatchList>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/watchlists"),
+        loader: () =>
+          fetch("https://saiyam-assignment10-server.vercel.app/watchlists"),
       },
       // reviews sections all routes
 

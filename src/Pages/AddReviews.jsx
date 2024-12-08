@@ -27,7 +27,7 @@ const AddReviews = () => {
       userName,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://saiyam-assignment10-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -27,7 +27,7 @@ const ReviewDetails = () => {
 
   const handleAddToWatchList = () => {
     if (user && user.email) {
-      fetch("http://localhost:5000/watchLists", {
+      fetch("https://saiyam-assignment10-server.vercel.app/watchLists", {
         method: "POST",
         headers: {
           "content-type": "application/json",

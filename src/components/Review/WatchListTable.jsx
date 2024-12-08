@@ -16,7 +16,7 @@ const WatchListTable = ({ watchList, idx, myWatchList, setMyWatchList }) => {
       confirmButtonText: "Yes, Remove it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/watchlists/${id}`, {
+        fetch(`https://saiyam-assignment10-server.vercel.app/watchlists/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

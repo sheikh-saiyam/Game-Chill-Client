@@ -6,7 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 const NewGames = () => {
   const [newGamesData, setNewGamesData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/sorted-year-reviews")
+    fetch("https://saiyam-assignment10-server.vercel.app/sorted-year-reviews")
       .then((res) => res.json())
       .then((data) => setNewGamesData(data));
   }, []);

@@ -39,7 +39,7 @@ const UpdateReview = () => {
       genre,
     };
 
-    fetch(`http://localhost:5000/reviews/${_id}`, {
+    fetch(`https://saiyam-assignment10-server.vercel.app/reviews/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

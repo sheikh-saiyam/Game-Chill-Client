@@ -15,7 +15,7 @@ const MyReviewsTable = ({ myReview, idx, myReviews, setMyReviews }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://saiyam-assignment10-server.vercel.app/reviews/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

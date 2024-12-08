@@ -28,7 +28,7 @@ const Reviews = () => {
   const [filteredReview, setFilteredReview] = useState(allReviews);
   const [selectedGenre, setSelectedGenre] = useState("");
   useEffect(() => {
-    fetch(`http://localhost:5000/filtered-genres?genre=${selectedGenre}`)
+    fetch(`https://saiyam-assignment10-server.vercel.app/filtered-genres?genre=${selectedGenre}`)
       .then((res) => res.json())
       .then((data) => setFilteredReview(data));
   }, [selectedGenre]);
