@@ -5,15 +5,15 @@ const Banner = () => {
 
   const images = [
     {
-      src: "https://cdn2.unrealengine.com/social-image-chapter4-s3-3840x2160-d35912cc25ad.jpg",
+      src: "https://i.ibb.co.com/B6rZnrF/social-image-chapter4-s3-3840x2160-d35912cc25ad.jpg",
       alt: "Image 1",
     },
     {
-      src: "https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/2x1_NSwitch_Minecraft.jpg",
+      src: "https://i.ibb.co.com/vPNTqKn/2x1-NSwitch-Minecraft.jpg",
       alt: "Image 2",
     },
     {
-      src: "https://assets.newatlas.com/dims4/default/de91311/2147483647/strip/true/crop/2560x1344+0+48/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Farchive%2Fgta-5-review.jpg&na.image_optimisation=0",
+      src: "https://i.ibb.co.com/Mg1LFQN/url-http-newatlas-brightspot-s3-amazonaws-com-archive-gta-5-review.jpg",
       alt: "Image 3",
     },
     {
@@ -72,13 +72,13 @@ const Banner = () => {
       <div className="absolute flex justify-between lg:justify-between bottom-0 lg:bottom-auto transform lg:-translate-y-1/2 left-0 right-0 lg:left-5 lg:right-5 lg:top-1/2 z-10">
         <button
           onClick={prevSlide}
-          className="btn bg-transparent border-2 text-white font-semibold rounded-none lg:btn-circle"
+          className="btn bg-transparent border-[3px] text-xl text-white font-bold rounded-none lg:btn-circle"
         >
           ❮
         </button>
         <button
           onClick={nextSlide}
-          className="btn bg-transparent border-2 text-white font-semibold rounded-none lg:btn-circle"
+          className="btn bg-transparent border-[3px] text-xl text-white font-bold rounded-none lg:btn-circle"
         >
           ❯
         </button>

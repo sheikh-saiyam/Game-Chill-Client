@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyReviewsTable = ({ myReview, idx, myReviews, setMyReviews }) => {
-  const { _id, title, gameCover, rating, genre } = myReview;
+  const { _id, title, gameCover, rating, genre, publishingYear } = myReview;
   // delete review function
   const handleDeleteReview = (id) => {
     Swal.fire({
@@ -43,6 +43,7 @@ const MyReviewsTable = ({ myReview, idx, myReviews, setMyReviews }) => {
         <td>{title}</td>
         <td>{genre}</td>
         <td>{rating}</td>
+        <td>{publishingYear}</td>
         <td>
           <div className="flex sm:flex-row sm:flex flex-col gap-2 items-center">
             <Link

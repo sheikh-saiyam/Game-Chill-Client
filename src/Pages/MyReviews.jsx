@@ -67,6 +67,7 @@ const MyReviews = () => {
                       <th>Title</th>
                       <th>Genre</th>
                       <th>Rating</th>
+                      <th>Year</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
