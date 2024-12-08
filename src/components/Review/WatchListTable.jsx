@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 
 const WatchListTable = ({ watchList, idx, myWatchList, setMyWatchList }) => {
   const { _id } = watchList;
-  const { title, gameCover, rating, publishingYear, genre, userName } =
+  const { title, gameCover, rating, publishingYear, genre } =
     watchList.reviewDetails;
 
   const handleWatchListDelete = (id) => {
@@ -16,9 +16,12 @@ const WatchListTable = ({ watchList, idx, myWatchList, setMyWatchList }) => {
       confirmButtonText: "Yes, Remove it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://saiyam-assignment10-server.vercel.app/watchlists/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://saiyam-assignment10-server.vercel.app/watchlists/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then(() => {
             Swal.fire({
@@ -45,7 +48,6 @@ const WatchListTable = ({ watchList, idx, myWatchList, setMyWatchList }) => {
         <td>{genre}</td>
         <td>{rating}</td>
         <td>{publishingYear}</td>
-        <td>{userName}</td>
         <td>
           <div className="flex sm:flex-row sm:flex flex-col gap-2 items-center">
             <button
