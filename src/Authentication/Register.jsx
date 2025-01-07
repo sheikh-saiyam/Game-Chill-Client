@@ -39,7 +39,13 @@ const Register = () => {
       .then((result) => {
         const currentUser = result.user;
         setUser(currentUser);
-        updateUserProfile({ displayName: name, photoURL: photo });
+        updateUserProfile({ displayName: name, photoURL: photo }).then(() => {
+          setUser({
+            ...currentUser,
+            displayName: name,
+            photoURL: photo,
+          });
+        });
         navigate("/");
 
         // for account create modal
@@ -67,7 +73,6 @@ const Register = () => {
         const currentUser = result.user;
         setUser(currentUser);
         navigate("/");
-
         // for welcome modal
         Swal.fire({
           icon: "success",

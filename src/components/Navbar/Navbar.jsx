@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { BiLogOut } from "react-icons/bi";
-import { FaBars } from "react-icons/fa";
-import { IoClose, IoHomeOutline } from "react-icons/io5";
+import { FaBars, FaList, FaStar } from "react-icons/fa";
+import { IoAddCircle, IoClose, IoHomeOutline } from "react-icons/io5";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { IoIosArrowDropdown } from "react-icons/io";
 const Navbar = () => {
   const { user, logOut, loading } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +25,7 @@ const Navbar = () => {
   }, [isDarkMode]);
 
   return (
-    <div>
+    <div className="sticky top-0 z-50 border-b-2 border-secondary">
       <div
         className={
           location.pathname === "/"
@@ -32,7 +33,7 @@ const Navbar = () => {
             : "bg-bgPrimary py-4"
         }
       >
-        <div className="navbar gap-6 w-11/12 mx-auto md:w-10/12 max-w-screen-2xl">
+        <div className="navbar px-0 gap-6 w-11/12 mx-auto max-w-screen-2xl">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -50,14 +51,14 @@ const Navbar = () => {
               {isOpen && (
                 <ul
                   tabIndex={0}
-                  className="animate__animated animate__bounceInDown menu w-max dropdown-content bg-base-100 rounded-box z-50 mt-4 p-4 border-2 border-primary space-y-3"
+                  className="animate__animated animate__bounceInDown menu w-[280px] dropdown-content bg-base-100 rounded-box z-50 mt-5 p-4 border-2 border-primary space-y-3 text-center font-medium"
                 >
                   <NavLink
                     to={"/"}
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl border-accent border bg-bgPrimary p-2"
-                        : "flex gap-1 items-center"
+                        ? "flex items-center justify-center py-2 px-4 gap-2 bg-primary text-white font-bold"
+                        : "bg-bgPrimary border border-secondary flex items-center justify-center py-2 px-4 gap-2 hover:bg-primary hover:text-white duration-300"
                     }
                   >
                     <IoHomeOutline />
@@ -67,44 +68,68 @@ const Navbar = () => {
                     to={"/reviews"}
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl  border-accent border bg-bgPrimary p-2"
-                        : "flex gap-1 items-center"
+                        ? "flex items-center justify-center py-2 px-4 gap-2 bg-primary text-white font-bold"
+                        : "bg-bgPrimary border border-secondary flex items-center justify-center py-2 px-4 gap-2 hover:bg-primary hover:text-white duration-300"
                     }
                   >
                     All Reviews
                   </NavLink>
+                  <NavLink
+                    to={"/game-news"}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "flex items-center justify-center py-2 px-4 gap-2 bg-primary text-white font-bold"
+                        : "bg-bgPrimary border border-secondary flex items-center justify-center py-2 px-4 gap-2 hover:bg-primary hover:text-white duration-300"
+                    }
+                  >
+                    News & Updates
+                  </NavLink>
+                  <NavLink
+                    to={"/upcoming-games"}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "flex items-center justify-center py-2 px-4 gap-2 bg-primary text-white font-bold"
+                        : "bg-bgPrimary border border-secondary flex items-center justify-center py-2 px-4 gap-2 hover:bg-primary hover:text-white duration-300"
+                    }
+                  >
+                    Upcoming-Games
+                  </NavLink>
                   {/* private routes */}
                   {user && user.email && (
                     <>
+                      <h1 className="text-center mt-3 font-semibold flex items-center gap-2 justify-center text-lg tracking-widest">
+                        Dashboard{" "}
+                        <IoIosArrowDropdown className="font-extrabold" />
+                      </h1>
                       <NavLink
                         to={"/add-review"}
                         className={({ isActive }) =>
                           isActive
-                            ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl border-accent border bg-bgPrimary p-2"
-                            : "flex gap-1 items-center"
+                            ? "flex items-center justify-center py-2 px-4 gap-2 bg-primary text-white font-bold"
+                            : "bg-bgPrimary border border-secondary flex items-center justify-center py-2 px-4 gap-2 hover:bg-primary hover:text-white duration-300"
                         }
                       >
-                        Add Review
+                        <IoAddCircle /> Add Review
                       </NavLink>
                       <NavLink
                         to={"/my-reviews"}
                         className={({ isActive }) =>
                           isActive
-                            ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl border-accent border bg-bgPrimary p-2"
-                            : "flex gap-1 items-center"
+                            ? "flex items-center justify-center py-2 px-4 gap-2 bg-primary text-white font-bold"
+                            : "bg-bgPrimary border border-secondary flex items-center justify-center py-2 px-4 gap-2 hover:bg-primary hover:text-white duration-300"
                         }
                       >
-                        My Reviews
+                        <FaStar /> My Reviews
                       </NavLink>
                       <NavLink
                         to={"/game-watchList"}
                         className={({ isActive }) =>
                           isActive
-                            ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center rounded-xl border-accent border bg-bgPrimary p-2"
-                            : "flex gap-1 items-center"
+                            ? "flex items-center justify-center py-2 px-4 gap-2 bg-primary text-white font-bold"
+                            : "bg-bgPrimary border border-secondary flex items-center justify-center py-2 px-4 gap-2 hover:bg-primary hover:text-white duration-300"
                         }
                       >
-                        Game WatchList
+                        <FaList /> WatchLists
                       </NavLink>
                     </>
                   )}
@@ -113,7 +138,7 @@ const Navbar = () => {
                   {user && user?.email && user?.photoURL ? (
                     <div className="md:flex gap-2 items-center">
                       <div className="flex flex-col space-y-2 justify-center">
-                        <div className="m-1">
+                        <div className="m-1 flex">
                           <img
                             className="w-10 h-10 rounded-full mx-auto"
                             src={user?.photoURL}
@@ -121,7 +146,10 @@ const Navbar = () => {
                           />
                         </div>
                         <div>
-                          <h1 className="text-center font-semibold">
+                          <h1 className="text-center font-medium">
+                            {user?.displayName}
+                          </h1>
+                          <h1 className="mt-1 text-center font-semibold">
                             {user.email}
                           </h1>
                         </div>
@@ -134,19 +162,22 @@ const Navbar = () => {
                   {user && user.email ? (
                     <button
                       onClick={logOut}
-                      className="btn bg-primary font-semibold text-lg text-white px-8
-                    items-center gap-2 flex"
+                      className="bg-primary text-center justify-center py-1 px-4 rounded-none font-semibold text-lg text-white
+                       items-center gap-2 flex"
                     >
                       <BiLogOut />
                       Log Out
                     </button>
                   ) : (
-                    <Link
-                      to={"/register"}
-                      className="btn bg-primary font-semibold text-lg text-white"
-                    >
-                      Registration
-                    </Link>
+                    <>
+                      <hr className="mt-4 border border-primary" />
+                      <Link
+                        to={"/register"}
+                        className="justify-center py-1 px-4  rounded-none mt-4 bg-primary font-semibold text-lg text-white"
+                      >
+                        Registration
+                      </Link>
+                    </>
                   )}
                 </ul>
               )}
@@ -155,7 +186,8 @@ const Navbar = () => {
               <img className="w-full h-20 md:w-40" src={logo} alt="" />
             </Link>
           </div>
-          <div className="navbar-center hidden xl:flex">
+          <div className="navbar-center space-x-8 hidden xl:flex items-center">
+            {/* public routes */}
             <ul className="menu menu-horizontal space-x-8 text-lg flex items-center animate__animated animate__bounceInDown">
               <NavLink
                 to={"/"}
@@ -168,6 +200,7 @@ const Navbar = () => {
                 <IoHomeOutline />
                 Home
               </NavLink>
+
               <NavLink
                 to={"/reviews"}
                 className={({ isActive }) =>
@@ -178,51 +211,89 @@ const Navbar = () => {
               >
                 All Reviews
               </NavLink>
-              {/* private routes */}
-              {user && user.email && (
-                <>
+
+              <NavLink
+                to={"/game-news"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                    : "flex gap-1 items-center hover:text-primary"
+                }
+              >
+                News & Updates
+              </NavLink>
+
+              <NavLink
+                to={"/upcoming-games"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
+                    : "flex gap-1 items-center hover:text-primary"
+                }
+              >
+                Upcoming Games
+              </NavLink>
+            </ul>
+            {/* public routes */}
+
+            {/* private routes */}
+            {user && user.email && (
+              <div className="hidden xl:block relative group z-10">
+                <button className="flex gap-1 items-center text-lg hover:text-primary">
+                  Dashboard
+                  <IoIosArrowDropdown className="text-xl" />
+                </button>
+                {/* Dropdown Menu */}
+                <div className="absolute right-0 mt-2 w-56 bg-white shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 ease-in-out z-50 text-center tracking-wider font-medium">
                   <NavLink
-                    to={"/add-review"}
+                    to="/add-review"
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                        : "flex gap-1 items-center hover:text-primary"
+                        ? "px-6 py-3 font-bold text-white bg-primary hover:bg-primary flex items-center justify-center gap-x-1"
+                        : "px-6 py-3 hover:text-primary hover:bg-bgPrimary flex items-center justify-center gap-x-1"
                     }
                   >
+                    <IoAddCircle className="text-base" />
                     Add Review
                   </NavLink>
                   <NavLink
-                    to={"/my-reviews"}
+                    to="/my-reviews"
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                        : "flex gap-1 items-center hover:text-primary"
+                        ? "px-6 py-3 font-bold text-white bg-primary hover:bg-primary flex items-center justify-center gap-1"
+                        : "px-6 py-3 hover:text-primary hover:bg-bgPrimary flex items-center justify-center gap-1"
                     }
                   >
+                    <FaStar />
                     My Reviews
                   </NavLink>
                   <NavLink
-                    to={"/game-watchList"}
+                    to="/game-watchList"
                     className={({ isActive }) =>
                       isActive
-                        ? "font-bold underline underline-offset-1 text-primary flex gap-1 items-center py-1 px-2 rounded-xl"
-                        : "flex gap-1 items-center hover:text-primary"
+                        ? "px-6 py-3 font-bold text-white bg-primary hover:bg-primary flex items-center justify-center gap-2"
+                        : "px-6 py-3 hover:text-primary hover:bg-bgPrimary flex items-center justify-center gap-2"
                     }
                   >
-                    Game WatchList
+                    <FaList />
+                    WatchLists
                   </NavLink>
-                </>
-              )}
-              {/* private routes */}
-            </ul>
+                </div>
+              </div>
+            )}
+            {/* private routes */}
           </div>
           <div className="navbar-end ">
             <div className="flex items-center gap-3">
               {/* conditional // userPhoto and Name */}
-              {user && user?.email && user?.photoURL ? (
+              {user && user?.email && user?.photoURL && (
                 <div className="md:flex gap-2 items-center hidden xl:flex">
                   <div className="dropdown dropdown-hover dropdown-end">
-                    <div tabIndex={0} role="button" className="m-1 w-full">
+                    <div
+                      tabIndex={0}
+                      role="button"
+                      className="w-full text-center"
+                    >
                       <img
                         className="w-10 h-10 rounded-full"
                         src={user?.photoURL}
@@ -231,28 +302,24 @@ const Navbar = () => {
                     </div>
                     <ul
                       tabIndex={0}
-                      className="dropdown-content menu bg-base-100 rounded-box z-[1] w-max p-2 shadow"
+                      className="mt-2 dropdown-content menu bg-base-100 rounded z-[1] w-max p-4 shadow text-center"
                     >
                       <div>
                         <img
-                          className="mx-auto w-20 h-20 rounded-full my-4"
+                          className="mx-auto w-20 h-20 rounded-full my-2"
                           src={user.photoURL}
                           alt=""
                         />
                       </div>
-                      <li>
-                        <a className="font-semibold">
-                          Name: {user.displayName}
-                        </a>
-                      </li>
-                      <li>
-                        <a className="font-semibold">Email: {user.email}</a>
-                      </li>
+                      <p className="font-medium tracking-wider my-1 text-[#181818] text-center">
+                        Name: {user.displayName}
+                      </p>
+                      <p className="font-medium tracking-wider my-1 text-[#181818] text-center">
+                        Email: {user.email}
+                      </p>
                     </ul>
                   </div>
                 </div>
-              ) : (
-                ""
               )}
               {/* conditional // userPhoto and Name */}
 
@@ -260,8 +327,7 @@ const Navbar = () => {
               {user && user.email ? (
                 <button
                   onClick={logOut}
-                  className="btn dark:bg-darkAccent dark:border-none bg-primary font-semibold text-lg text-white px-8
-                 items-center gap-2 hidden md:flex"
+                  className="btn dark:bg-darkAccent dark:border-none bg-primary font-semibold text-lg text-white items-center gap-2 hidden md:flex"
                 >
                   <BiLogOut />
                   Log Out
@@ -285,6 +351,7 @@ const Navbar = () => {
                 </>
               )}
               {/* conditional login/register/logout btn */}
+
               {location.pathname === "/" ? (
                 <label className="swap swap-rotate cursor-pointer">
                   {/* Hidden checkbox to control theme state */}

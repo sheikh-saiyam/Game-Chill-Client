@@ -1,4 +1,6 @@
 import { Typewriter } from "react-simple-typewriter";
+import UpcomingGamesCard from "./UpcomingGamesCard";
+import { Link } from "react-router-dom";
 
 const UpcomingGames = () => {
   const games = [
@@ -49,21 +51,17 @@ const UpcomingGames = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {games.map((game) => (
-              <div key={game.id} className="bg-[#fcebf1] rounded-lg grid ">
-                <img
-                  src={game.image}
-                  alt={game.title}
-                  className="w-full h-48"
-                />
-                <div className="p-4">
-                  <h3 className="text-3xl font-semibold">{game.title}</h3>
-                  <p className="text-gray-800 text-sm mt-1">
-                    Release Date: {game.releaseDate}
-                  </p>
-                  <p className="text-gray-900 mt-1">{game.description}</p>
-                </div>
-              </div>
+              <UpcomingGamesCard key={game.id} game={game} />
             ))}
+          </div>
+
+          <div>
+            <Link
+              to={"/upcoming-games"}
+              className="btn dark:bg-darkAccent bg-accent w-1/2 flex mt-10 items-center justify-center mx-auto text-white rounded-lg"
+            >
+              View More
+            </Link>
           </div>
         </div>
       </section>

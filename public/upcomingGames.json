@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Grand Theft Auto 6",
+    "releaseDate": "October 22, 2025",
+    "description": "The highly anticipated sequel to the legendary open-world action-adventure game.",
+    "image": "https://media-rockstargames-com.akamaized.net/mfe6/prod/__common/img/71d4d17edcd49703a5ea446cc0e588e6.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Elder Scrolls VI",
+    "releaseDate": "June 10, 2025",
+    "description": "The next chapter in the iconic Elder Scrolls series, promising a massive open-world experience.",
+    "image": "https://gaming-cdn.com/images/products/2668/orig/the-elder-scrolls-vi-pc-game-cover.jpg?v=1688120250"
+  },
+  {
+    "id": 3,
+    "title": "Racer Xtreme",
+    "releaseDate": "February 20, 2025",
+    "description": "High-speed racing with stunning graphics. gameplay packed with  challenges",
+    "image": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2634950/header.jpg?t=1732587399"
+  },
+  {
+    "id": 4,
+    "title": "Fable: A New Beginning",
+    "releaseDate": "December 12, 2025",
+    "description": "Revisit the whimsical and magical world of Albion in this reboot of the beloved franchise.",
+    "image": "https://assets.xboxservices.com/assets/17/40/1740433f-1e52-4748-a2a5-b983e1915890.jpg?n=Fable_GLP-Page-Hero-1084_1920x1080.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Metroid Prime 4",
+    "releaseDate": "November 8, 2025",
+    "description": "Join Samus Aran in a new galactic adventure packed with action and exploration.",
+    "image": "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000084766/8e16460a2fc3be78fb99a411be9d51e4a8ca0d33d965da0c5b0f0ed291454e62"
+  },
+  {
+    "id": 6,
+    "title": "The Witcher 4: Blood of the Wild",
+    "releaseDate": "July 15, 2025",
+    "description": "A new tale in the Witcher saga, with improved combat and an expansive open world.",
+    "image": "https://cost.games/gimg/93/3544/header.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Monster Hunter Wilds",
+    "releaseDate": "March 15, 2025",
+    "description": "Embark on an epic journey in a vast wilderness to hunt fearsome monsters and craft powerful gear.",
+    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2246340/header.jpg?t=1730880879"
+  },
+  {
+    "id": 8,
+    "title": "Dune: Awakening",
+    "releaseDate": "September 10, 2025",
+    "description": "A survival MMO set in the vast deserts of Arrakis, inspired by the legendary sci-fi universe of Dune.",
+    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1172710/header.jpg?t=1733747456"
+  },
+  {
+    "id": 9,
+    "title": "Sid Meier's Civilization VII",
+    "releaseDate": "November 18, 2025",
+    "description": "The next iteration in the iconic Civilization series, bringing new mechanics and enhanced strategy gameplay.",
+    "image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1295660/header.jpg?t=1734627609"
+  }
+]

@@ -61,7 +61,7 @@ const Banner = () => {
           <div key={index} className="w-full flex-shrink-0">
             <img
               src={image.src}
-              className="w-full h-[350px] md:h-[500px] lg:h-[550px] rounded-2xl border-2 border-transparent"
+              className="w-full h-[300px] md:h-[400px] lg:h-[450px] xl:h-[480px] rounded-2xl border-2 border-transparent"
               alt={image.alt}
             />
           </div>
@@ -72,13 +72,13 @@ const Banner = () => {
       <div className="absolute flex justify-between lg:justify-between bottom-0 lg:bottom-auto transform lg:-translate-y-1/2 left-0 right-0 lg:left-5 lg:right-5 lg:top-1/2 z-10">
         <button
           onClick={prevSlide}
-          className="btn bg-transparent border-[3px] text-xl text-white font-bold rounded-none lg:btn-circle"
+          className="btn bg-transparent border-[3px] flex items-center text-xl text-white font-bold rounded-none lg:btn-circle"
         >
           ❮
         </button>
         <button
           onClick={nextSlide}
-          className="btn bg-transparent border-[3px] text-xl text-white font-bold rounded-none lg:btn-circle"
+          className="btn bg-transparent border-[3px] flex items-center text-xl text-white font-bold rounded-none lg:btn-circle"
         >
           ❯
         </button>

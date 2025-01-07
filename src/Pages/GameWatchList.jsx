@@ -6,6 +6,13 @@ import logo from "../assets/logo.png";
 import { Typewriter } from "react-simple-typewriter";
 import Loader from "../components/Loader/Loader";
 const GameWatchList = () => {
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+  
   const watchListData = useLoaderData();
   const { user } = useContext(AuthContext);
   const filteredWatchListData = watchListData.filter(

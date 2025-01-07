@@ -11,6 +11,8 @@ import PrivateRoute from "./PrivateRoute";
 import ReviewDetails from "../Pages/ReviewDetails";
 import UpdateReview from "../Pages/UpdateReview";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
+import LatestGameNews from "../Pages/LatestGameNews";
+import UpcomingGamesPage from "../Pages/UpcomingGamesPage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,17 @@ const router = createBrowserRouter([
             "https://saiyam-assignment10-server.vercel.app/highest-rated-games"
           ),
       },
+
+      // normal routes and pages
+      {
+        path: "/game-news",
+        element: <LatestGameNews></LatestGameNews>,
+      },
+      {
+        path: "/upcoming-games",
+        element: <UpcomingGamesPage></UpcomingGamesPage>,
+      },
+      // normal routes and pages
 
       // reviews sections all routes
       {
