@@ -2,7 +2,7 @@
 
 **Game-Chill** is a user-friendly platform that allows users to explore, share, and manage game reviews. Whether you're a casual gamer or a hardcore fan, this app offers a chill experience for discovering games, reading reviews, and creating a personalized watchlist.
 
-## 🔗 [Live Website Link Of **Game-Chill**](https://saiyam-assignment10.netlify.app/)
+## 🔗 [Live Website Link Of **Game-Chill**](game-chill.netlify.app/)
 
 ## Key features :
 
@@ -22,7 +22,7 @@
 - Logged-in users can add games to their personal watchList.
 - Users can view, manage, and delete games from their watchList.
 
-### **💼 Review Management**:
+### **⭐ Review Management**:
 
 - All Reviews Page: A collection of all game reviews submitted by users.
 - Detailed Review Page: Each review has its dedicated page with full details, including an option to add the game to the watchList.
@@ -49,6 +49,23 @@
 - Latest Game News and Updates: A feed or list that highlights recent news about the gaming industry, updates for games, or major gaming events.
 - Top-10 Newest Games: Display the ten latest game releases with their release dates.displayed using a smooth marquee with hover effects.
 - Upcoming Games: A section featuring highly anticipated games that will be released soon, with their release dates and key highlights.
+
+### ⭐ All Reviews Page (`/reviews`)
+
+- A section displaying all the reviews for games, fetched from the database.
+- Each review is presented as a card containing the following details: Game Name, Rating, Game Genre, Game Publishing Year and a explore more btn
+- Sort reviews by rating or year and filter by genre to narrow down game selections.
+
+### 📜 Review Details Page (`/review/:id`)
+
+- A dedicated page that displays the full details of a specific review.
+- Content: Game Name, Genre, Game Publishing Year, Rating, Full Review, Reviewer's Name & Email, and a Add to watchList button.
+
+### 📰 Game News Page (`/game-news`)
+
+- A page displaying all the latest news and updates from the gaming world.
+- Display headlines, articles, images, or video snippets with their publish dates.
+- Include links to full articles or external sources for more detailed content.
 
 ### 🔐 Login Page (`/login`)
 
@@ -81,15 +98,15 @@
 ```json
 [
   {
-   "_id": "67506bff642a5b74fd8d38ce",
-   "title": "Fortnite",
-   "gameCover": "https://cdn2.unrealengine.com/social-image-chapter4-s3-3840x2160-d35912cc25ad.jpg",
-   "reviewDescription": "'Fortnite' revolutionized the battle royale genre with its fast-paced action, creative building mechanics, and vibrant graphics. Since its 2017 release...",
-   "rating": "4.6",
-   "publishingYear": "2017",
-   "genre": "Shooter",
-   "userEmail": "your-name@gmail.com",
-   "userName": "your-name"
+    "_id": "67506bff642a5b74fd8d38ce",
+    "title": "Fortnite",
+    "gameCover": "https://cdn2.unrealengine.com/social-image-chapter4-s3-3840x2160-d35912cc25ad.jpg",
+    "reviewDescription": "'Fortnite' revolutionized the battle royale genre with its fast-paced action, creative building mechanics, and vibrant graphics. Since its 2017 release...",
+    "rating": "4.6",
+    "publishingYear": "2017",
+    "genre": "Shooter",
+    "userEmail": "your-name@gmail.com",
+    "userName": "your-name"
   }
 ]
 ```
@@ -110,6 +127,14 @@
 - **React Icons**: A library for easily adding customizable icons to enhance the UI.
 - **SweetAlert2**: Provides beautiful, customizable popups for user interaction, such as alerts for success or errors.
 - **Animate.css**: A library for adding CSS-based animations to elements for a more engaging interface.
+
+## 📸Home Page (`/`) Image
+
+![Project Image](https://i.ibb.co.com/6yw0R85/Screenshot-2025-01-12-210838.png)
+
+## 📸Reviews Page (`/reviews`) Image
+
+![Project Image](https://i.ibb.co.com/n69rvTP/Screenshot-2025-01-12-210936.png)
 
 ## ⚙️ Installation & Setup
 
