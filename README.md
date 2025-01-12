@@ -101,7 +101,7 @@
     "_id": "67506bff642a5b74fd8d38ce",
     "title": "Fortnite",
     "gameCover": "https://cdn2.unrealengine.com/social-image-chapter4-s3-3840x2160-d35912cc25ad.jpg",
-    "reviewDescription": "'Fortnite' revolutionized the battle royale genre with its fast-paced action, creative building mechanics, and vibrant graphics. Since its 2017 release...",
+    "reviewDescription": "'Fortnite' revolutionized the battle royale genre with its fast-paced...",
     "rating": "4.6",
     "publishingYear": "2017",
     "genre": "Shooter",
