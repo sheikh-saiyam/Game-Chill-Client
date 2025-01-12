@@ -2,7 +2,7 @@
 
 **Game-Chill** is a user-friendly platform that allows users to explore, share, and manage game reviews. Whether you're a casual gamer or a hardcore fan, this app offers a chill experience for discovering games, reading reviews, and creating a personalized watchlist.
 
-## 🔗 [Live Website Link Of **Game-Chill**](game-chill.netlify.app/)
+## 🔗 [Live Website Link Of **Game-Chill**](https://game-chill.netlify.app/)
 
 ## 🔗 [Github Server Repository **Game-Chill**](https://github.com/sheikh-saiyam/Game-Chill-Server)
 
