@@ -4,6 +4,8 @@
 
 ## 🔗 [Live Website Link Of **Game-Chill**](game-chill.netlify.app/)
 
+## 🔗 [Github Server Repository **Game-Chill**](https://github.com/sheikh-saiyam/Game-Chill-Server)
+
 ## Key features :
 
 ### **🔑 Authentication**:
@@ -130,11 +132,11 @@
 
 ## 📸Home Page (`/`) Image
 
-![Project Image](https://raw.githubusercontent.com/sheikh-saiyam/My-Portfolio/refs/heads/main/public/projects/game-chill%20(2).png)
+![Project Image](<https://raw.githubusercontent.com/sheikh-saiyam/My-Portfolio/refs/heads/main/public/projects/game-chill%20(2).png>)
 
 ## 📸Reviews Page (`/reviews`) Image
 
-![Project Image](https://raw.githubusercontent.com/sheikh-saiyam/My-Portfolio/refs/heads/main/public/projects/game-chill%20(1).png)
+![Project Image](<https://raw.githubusercontent.com/sheikh-saiyam/My-Portfolio/refs/heads/main/public/projects/game-chill%20(1).png>)
 
 ## ⚙️ Installation & Setup
 
