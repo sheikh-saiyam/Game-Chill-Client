@@ -116,15 +116,15 @@
 **1. Clone the client repository**:
 
 ```
-git clone https://github.com/sheikh-saiyam/Garir-Khoj-Client.git
-cd Garir-Khoj-Client
+git clone https://github.com/sheikh-saiyam/Game-Chill-Client.git
+cd Game-Chill-Client
 ```
 
 **2. Clone the server repository**:
 
 ```
-git clone https://github.com/sheikh-saiyam/Garir-Khoj-Server.git
-cd Garir-Khoj-Server
+git clone https://github.com/sheikh-saiyam/Game-Chill-Server.git
+cd Game-Chill-Server
 ```
 
 **3. Install dependencies on client & server:**
@@ -153,13 +153,13 @@ DB_PASS=your_db_password
 
 **6. Start the development:**
 
-- client
+- Game Chill Client
 
 ```
 npm run build
 ```
 
-- server
+- Game Chill Server
 
 ```
 npm start
