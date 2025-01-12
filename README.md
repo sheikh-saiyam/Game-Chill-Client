@@ -11,32 +11,32 @@
 - **Secure Login & Registration**: Email/Password-based authentication using Firebase.
 - **Google Login**: Quick access via Google account.
 
-### **Game Reviews**:
+### **💼 Game Reviews**:
 
 - Users can create new reviews for games they have played, providing ratings, descriptions, and genre information.
 - Reviews can be updated and deleted by the user who created them.
 - Review data is stored in MongoDB.
 
-### **Game WatchList**:
+### **🔍 Game WatchList**:
 
 - Logged-in users can add games to their personal watchList.
 - Users can view, manage, and delete games from their watchList.
 
-### **Review Management**:
+### **💼 Review Management**:
 
 - All Reviews Page: A collection of all game reviews submitted by users.
 - Detailed Review Page: Each review has its dedicated page with full details, including an option to add the game to the watchList.
 - Sort & Filter: Users can sort reviews by rating or year and filter by genre to narrow down game selections.
 
-### **Responsive Design**:
+### **🖌️ Responsive Design**:
 
 - The application is fully responsive, supporting mobile, tablet, and desktop views for a seamless experience across all devices.
 
-### **Dark/Light Theme Toggle**:
+### **🔁 Dark/Light Theme Toggle**:
 
 - Users can toggle between dark and light themes based on their preference.
 
-### **Loading Spinner**:
+### **🔄 Loading Spinner**:
 
 - Displays a loading spinner when fetching data from the server, improving the user experience during data loading.
 
@@ -50,28 +50,28 @@
 - Top-10 Newest Games: Display the ten latest game releases with their release dates.displayed using a smooth marquee with hover effects.
 - Upcoming Games: A section featuring highly anticipated games that will be released soon, with their release dates and key highlights.
 
-### Login Page (`/login`)
+### 🔐 Login Page (`/login`)
 
 - Email/password form with validation and error handling.
 - Google Login option for quick access.
 
-### Register Page (`/register`)
+### 📋 Register Page (`/register`)
 
 - Form with fields for Name, Email, Profile Picture URL, and Password.
 - Real-time password validation (uppercase, lowercase, minimum length).
 
-### Add Review: (`/add-review`) _(Private Route)_
+### ➕ Add Review: (`/add-review`) _(Private Route)_
 
 - A form for submitting game reviews includes title, description, rating, and genre and more...
 
-### My Reviews Page (`/my-reviews`) _(Private Route)_
+### 👤 My Reviews Page (`/my-reviews`) _(Private Route)_
 
 - Displays all reviews submitted by the logged-in user.
 - Allows users to update or delete their reviews:
 - **Update:** Redirects to a form pre-filled with existing review data.
 - **Delete:** Prompts the user for confirmation before deleting the review.
 
-### Game WatchList Page (`my-watchlists`) _(Private Route)_
+### 🔍 Game WatchList Page (`my-watchlists`) _(Private Route)_
 
 - Displays a user's personal game watchlist with the option to remove games.
 - Only games added by the logged-in user are shown.
@@ -94,15 +94,13 @@
 ]
 ```
 
-## Tech Stack
+## 🌐 Tech Stack
 
 - **Frontend**: React.js, Tailwind CSS for styling, Firebase Authentication for user login, React Router for routing
 
 - **Backend**: Express.js for API handling, MongoDB for data storage
 
-- **Hosting**:
-- **Client-side**: Netlify
-- **Server-side**: Vercel
+- **Hosting**: Client-side: Netlify, Server-side: Vercel
 
 ## 📦 NPM Packages
 
