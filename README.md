@@ -130,11 +130,11 @@
 
 ## 📸Home Page (`/`) Image
 
-![Project Image](https://i.ibb.co.com/6yw0R85/Screenshot-2025-01-12-210838.png)
+![Project Image](https://raw.githubusercontent.com/sheikh-saiyam/My-Portfolio/refs/heads/main/public/projects/game-chill%20(2).png)
 
 ## 📸Reviews Page (`/reviews`) Image
 
-![Project Image](https://i.ibb.co.com/n69rvTP/Screenshot-2025-01-12-210936.png)
+![Project Image](https://raw.githubusercontent.com/sheikh-saiyam/My-Portfolio/refs/heads/main/public/projects/game-chill%20(1).png)
 
 ## ⚙️ Installation & Setup
 
