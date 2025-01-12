@@ -78,13 +78,13 @@
 
 ## ⚙️ JSON Data Structure
 
-```
+```json
 [
   {
    "_id": "67506bff642a5b74fd8d38ce",
    "title": "Fortnite",
    "gameCover": "https://cdn2.unrealengine.com/social-image-chapter4-s3-3840x2160-d35912cc25ad.jpg",
-   "reviewDescription": "'Fortnite' revolutionized the battle royale genre with its fast-paced action, creative building mechanics, and vibrant graphics. Since its 2017 release, the game has become a cultural phenomenon, offering regular updates, new seasons, and exciting collaborations with brands like Marvel and Star Wars. The Battle Pass rewards progression, while Creative Mode gives players freedom to design their own worlds. 'Fortnite' continues to be a social hub, connecting players globally with cross-platform play. Its esports scene and live events have expanded its influence, making it a staple in gaming culture. A free-to-play model and constant evolution keep 'Fortnite' fresh, engaging, and relevant.",
+   "reviewDescription": "'Fortnite' revolutionized the battle royale genre with its fast-paced action, creative building mechanics, and vibrant graphics. Since its 2017 release...",
    "rating": "4.6",
    "publishingYear": "2017",
    "genre": "Shooter",
@@ -96,15 +96,9 @@
 
 ## Tech Stack
 
-- **Frontend**:
-- React.js
-- Tailwind CSS for styling
-- Firebase Authentication for user login
-- React Router for routing
+- **Frontend**: React.js, Tailwind CSS for styling, Firebase Authentication for user login, React Router for routing
 
-- **Backend**:
-- Express.js for API handling
-- MongoDB for data storage
+- **Backend**: Express.js for API handling, MongoDB for data storage
 
 - **Hosting**:
 - **Client-side**: Netlify
@@ -112,12 +106,12 @@
 
 ## 📦 NPM Packages
 
-- **React Awesome reveal**
-- **React-simple-typewriter**
-- **React Fast Marquee**
-- **React icons**
-- **SweetAlert2**
-- **Animate.css**
+- **React Awesome Reveal**: A library for adding animations and revealing elements with smooth transitions.
+- **React Simple Typewriter**: Adds a typewriter effect to text, creating a dynamic and interactive user experience.
+- **React Fast Marquee**: A fast scrolling text marquee component for displaying dynamic content.
+- **React Icons**: A library for easily adding customizable icons to enhance the UI.
+- **SweetAlert2**: Provides beautiful, customizable popups for user interaction, such as alerts for success or errors.
+- **Animate.css**: A library for adding CSS-based animations to elements for a more engaging interface.
 
 ## ⚙️ Installation & Setup
 
@@ -132,7 +126,7 @@ cd Garir-Khoj-Client
 
 ```
 git clone https://github.com/sheikh-saiyam/Garir-Khoj-Server.git
-cd Garir-Khoj-Client
+cd Garir-Khoj-Server
 ```
 
 **3. Install dependencies on client & server:**
